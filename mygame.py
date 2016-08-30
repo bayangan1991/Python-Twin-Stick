@@ -24,7 +24,7 @@ def gameLoop(gameDisplay):
 	Mouse = Vector()
 		
 	# Load Player
-	P1 = objects.Character('assets\\survivor',Vector(291,291),Vector(291,291))
+	P1 = objects.Character('assets\\survivor',Vector(120,120),Vector(120,120))
 	P1.name = 'player'
 
 	# Set Stating position
@@ -45,13 +45,13 @@ def gameLoop(gameDisplay):
 			if event.type == pygame.MOUSEMOTION:
 				Mouse = Vector(event.pos[0],event.pos[1])
 
-			if event.type == pygame.MOUSEBUTTONUP:
+			if event.type == pygame.MOUSEBUTTONDOWN:
 				if P1.state == 'idle' or P1.state == 'move':
 					if event.button == 1:
 						P1.changeAnimation(P1.holding,'shoot')
 					elif event.button == 3:
 						P1.changeAnimation(P1.holding,'meleeattack')
-
+ 
 			# Read key Values
 			if event.type == pygame.KEYDOWN:
 				key = event.unicode.lower()

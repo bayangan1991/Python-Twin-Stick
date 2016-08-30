@@ -4,6 +4,10 @@ import pygame
 import math
 import glob
 import re
+import colour
+
+help(colour)
+
 
 class Vector():
 	def __init__(self,x=0,y=0):
@@ -142,7 +146,7 @@ class Character(Sprite):
 		self.state = 'idle'
 		self.holding = 'handgun'
 		self.time = 0
-		self.movespeed = 5
+		self.movespeed = 3
 		self.moving = False
 		self.changed = {'moving':False}
 		Sprite.All.add(self)
